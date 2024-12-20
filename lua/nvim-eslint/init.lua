@@ -138,21 +138,17 @@ end
 
 function M.setup_lsp_start()
 	vim.api.nvim_create_autocmd("FileType", {
-		pattern = vim.tbl_extend(
-			"force",
-			{
-				"javascript",
-				"javascriptreact",
-				"javascript.jsx",
-				"typescript",
-				"typescriptreact",
-				"typescript.tsx",
-				"vue",
-				"svelte",
-				"astro",
-			},
-			M.user_config.filetypes or {}
-		),
+		pattern = vim.tbl_extend("force", {
+			"javascript",
+			"javascriptreact",
+			"javascript.jsx",
+			"typescript",
+			"typescriptreact",
+			"typescript.tsx",
+			"vue",
+			"svelte",
+			"astro",
+		}, M.user_config.filetypes or {}),
 		callback = function(args)
 			vim.lsp.start({
 				name = "eslint",
