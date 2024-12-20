@@ -197,6 +197,8 @@ function M.setup_lsp_start()
 								table.insert(response, value)
 							end
 						end
+
+						require("lazyvim.util").info("ESLint response: " .. vim.inspect(response))
 						return response
 					end,
 				}),
