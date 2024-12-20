@@ -197,6 +197,7 @@ function M.setup_lsp_start()
 								table.insert(response, value)
 							end
 						end
+						vim.notify(vim.inspect(response))
 						return response
 					end,
 				}),
