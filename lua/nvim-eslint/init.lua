@@ -59,7 +59,7 @@ function M.make_settings(buffer)
 		nodePath = function(bufnr)
 			return M.resolve_node_path()
 		end,
-		workingDirectory = { mode = "auto" },
+		workingDirectories = { mode = "auto" },
 		workspaceFolder = function(bufnr)
 			local git_dir = M.resolve_git_dir(bufnr)
 			return {
